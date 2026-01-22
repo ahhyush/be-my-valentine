@@ -147,15 +147,19 @@ export default function Page() {
           <p className="my-1 text-l italic text-gray-700">Our first photo :))</p>
           
           <div className="my-4 text-4xl font-bold">RAHHHHH lfggg!!!</div>
-          <p className="mt-8 max-w-2xl text-center text-s font-light italic text-pink-900 leading-relaxed">
+          <p className="mt-8 max-w-2xl text-left text-s font-light italic text-pink-900 leading-relaxed">
             Happy Valentines my love, I wish so bad that I could spend our first valentines together but hey, we've got like a million more together :)
             I hope you're having a fire day planning for Galentines (pmo) but just know the past 7 months have been so fucking great with you.
             I look at your lil giftbox every single day, and im literally ITCHING to read your notes rn but I wont :(
             I canNOT wait to see u baby, wherever it is I know we'll have a good time together. 
-            I really hope you like this lil website baby and i hope you have as much fun reading it as I did making it, happy valentines day. 
+            but yeah I really hope you like this lil website baby and i hope you have as much fun reading it as I did making it, happy valentines day. 
             I love you so fucking much it hurts. 
-            <br></br>
+            <br/>
             ~ Your love, Aayush
+            <br/><br/>
+            - p.s. The capcut edit and the audio is supposed to be IRONIC. i am NOT cringe like that hope uk okay love u :)
+            <br/>
+            - p.s.p.s. The audio will never stop looping hope its overstimulating u
           </p>
         </>
       ) : (
