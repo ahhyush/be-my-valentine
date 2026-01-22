@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import asleep from "./assets/asleep.jpg";
 import cat from "./assets/cat.jpg";
 import earrings from "./assets/earrings.jpg";
@@ -14,7 +14,9 @@ import meAnnoyed from "./assets/meAnnoyed.jpg";
 import solace from "./assets/solace.jpg";
 import stellas from "./assets/stellas.jpg";
 import usTogether from "./assets/usTogether.jpg";
-import first from "./assets/first.jpg";
+import yay from "./assets/yay.mp3";
+import yes from "./assets/yes.gif";
+import wallpaper from "./assets/wallpaper.jpg";
 
 export default function Page() {
   const [noCount, setNoCount] = useState(0);
@@ -23,6 +25,9 @@ export default function Page() {
   const [passwordInput, setPasswordInput] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const yesButtonSize = noCount * 20 + 16;
+
+  const yaySound = useRef<HTMLAudioElement>(null);
+
 
   const correctPassword = "eat"; 
 
@@ -111,9 +116,10 @@ export default function Page() {
   };
 
   return (
-    <>
+    <div className="min-h-screen bg-pink-200">
+      <audio ref={yaySound} src={yay} loop />
       {!isAuthenticated ? (
-        <div className="flex h-screen flex-col items-center justify-center bg-pink-200">
+        <div className="flex min-h-screen flex-col items-center justify-center bg-pink-200">
           <form onSubmit={handlePasswordSubmit} className="flex flex-col items-center gap-4">
             <h1 className="text-3xl font-bold">Enter Password</h1>
             <p className="text-left py-0.5">Hint: im gonna _ _ _ you</p>
@@ -134,13 +140,24 @@ export default function Page() {
           </form>
         </div>
       ) : (
-        <div className="-mt-16 flex h-screen flex-col items-center justify-center bg-pink-200">
+        <div className="-mt-16 flex min-h-screen flex-col items-center justify-center">
       {yesPressed ? (
         <>
-          <img className="h-[400px]" src= {first}/>
+          
+          <img className="h-[500px]" src= {yes}/>
           <p className="my-1 text-l italic text-gray-700">Our first photo :))</p>
           
-          <div className="my-4 text-4xl font-bold">RAHHHHH lfggg!!! I love you baby happy valentines number 1 of 1 million :))</div>
+          <div className="my-4 text-4xl font-bold">RAHHHHH lfggg!!!</div>
+          <p className="mt-8 max-w-2xl text-center text-s font-light italic text-pink-900 leading-relaxed">
+            Happy Valentines my love, I wish so bad that I could spend our first valentines together but hey, we've got like a million more together :)
+            I hope you're having a fire day planning for Galentines (pmo) but just know the past 7 months have been so fucking great with you.
+            I look at your lil giftbox every single day, and im literally ITCHING to read your notes rn but I wont :(
+            I canNOT wait to see u baby, wherever it is I know we'll have a good time together. 
+            I really hope you like this lil website baby and i hope you have as much fun reading it as I did making it, happy valentines day. 
+            I love you so fucking much it hurts. 
+            <br></br>
+            ~ Your love, Aayush
+          </p>
         </>
       ) : (
         <>
@@ -154,7 +171,11 @@ export default function Page() {
             <button
               className={`mr-4 rounded bg-green-500 px-4 py-2 font-bold text-white hover:bg-green-700`}
               style={{ fontSize: yesButtonSize }}
-              onClick={() => setYesPressed(true)}
+              onClick={() => {
+                setYesPressed(true);
+                yaySound.current?.play();
+              }}
+              
             >
               Yes
             </button>
@@ -171,6 +192,6 @@ export default function Page() {
       )}
         </div>
       )}
-    </>
+    </div>
   );
 }
