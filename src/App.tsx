@@ -16,7 +16,6 @@ import stellas from "./assets/stellas.jpg";
 import usTogether from "./assets/usTogether.jpg";
 import yay from "./assets/yay.mp3";
 import yes from "./assets/yes.gif";
-import wallpaper from "./assets/wallpaper.jpg";
 
 export default function Page() {
   const [noCount, setNoCount] = useState(0);
